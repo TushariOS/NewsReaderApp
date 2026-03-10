@@ -54,6 +54,9 @@ The project includes unit test coverage using XCTest, including:
   - Repository layer testing
   - Mock network service
 
+##App FLow
+![](appflow.gif)
+
 ## Author
  Developed by Tushar Jaunjalkar
  iOS Developer

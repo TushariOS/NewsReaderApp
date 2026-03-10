@@ -14,24 +14,23 @@ class SearchNewsRepositoryImplementation: SearchNewsRepositoryProtocol {
     let networkService = NetworKService.shared
     
     func searchNewsList(searchText: String) -> AnyPublisher<NewsResponseDTO, AppNetworkErrors> {
+        //TODO: Uncomment code if api hit's more then 50 in 12 hr and comment API call to server code.
+        //        guard let url = Bundle.main.url(forResource: "DummayNewsResponse", withExtension: "json") else {
+        //            return Fail(error: .unownkonError).eraseToAnyPublisher()
+        //        }
+        //        do {
+        //            let data = try Data(contentsOf: url)
+        //            let response = try JSONDecoder().decode(NewsResponseDTO.self, from: data)
+        //
+        //            return Just(response)
+        //                .setFailureType(to: AppNetworkErrors.self)
+        //                .eraseToAnyPublisher()
+        //
+        //        } catch {
+        //            return Fail(error: .unownkonError)
+        //                .eraseToAnyPublisher()
+        //        }
         
-//        guard let url = Bundle.main.url(forResource: "DummaryNewsResponse", withExtension: "json") else {
-//            return Fail(error: .unownkonError).eraseToAnyPublisher()
-//        }
-//
-//        do {
-//            let data = try Data(contentsOf: url)
-//            let response = try JSONDecoder().decode(NewsResponseDTO.self, from: data)
-//
-//            return Just(response)
-//                .setFailureType(to: AppNetworkErrors.self)
-//                .eraseToAnyPublisher()
-//
-//        } catch {
-//            return Fail(error: .unownkonError)
-//                .eraseToAnyPublisher()
-//        }
-
         if let request = buildNewsRequest(searchText: searchText) {
             return networkService.request(request: request)
         }
@@ -46,7 +45,6 @@ class SearchNewsRepositoryImplementation: SearchNewsRepositoryProtocol {
         components.path = APIConfig.everythingPath
         components.queryItems = [
             URLQueryItem(name: "q", value: searchText),
-           // URLQueryItem(name: "from", value: "2026-03-09"),
             URLQueryItem(name: "sortBy", value: "popularity"),
             URLQueryItem(name: "apiKey", value: APIConfig.apiKey)
         ]

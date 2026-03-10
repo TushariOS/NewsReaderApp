@@ -13,22 +13,23 @@ class NewsListRepositoryImplementation: NewsListRepositoryProtocol {
     let networkService = NetworKService.shared
     
     func fetchNewsList(page: Int) -> AnyPublisher<NewsResponseDTO, AppNetworkErrors> {
-//        guard let url = Bundle.main.url(forResource: "DummaryNewsResponse", withExtension: "json") else {
-//            return Fail(error: .unownkonError).eraseToAnyPublisher()
-//        }
-//
-//        do {
-//            let data = try Data(contentsOf: url)
-//            let response = try JSONDecoder().decode(NewsResponseDTO.self, from: data)
-//
-//            return Just(response)
-//                .setFailureType(to: AppNetworkErrors.self)
-//                .eraseToAnyPublisher()
-//
-//        } catch {
-//            return Fail(error: .unownkonError)
-//                .eraseToAnyPublisher()
-//        }
+        //TODO: Uncomment code if api hit's more then 50 in 12 hr and comment API call tos server code.
+        // guard let url = Bundle.main.url(forResource: "DummayNewsResponse", withExtension: "json") else {
+        //            return Fail(error: .unownkonError).eraseToAnyPublisher()
+        //        }
+        //        do {
+        //            let data = try Data(contentsOf: url)
+        //            let response = try JSONDecoder().decode(NewsResponseDTO.self, from: data)
+        //
+        //            return Just(response)
+        //                .setFailureType(to: AppNetworkErrors.self)
+        //                .eraseToAnyPublisher()
+        //
+        //        } catch {
+        //            return Fail(error: .unownkonError)
+        //                .eraseToAnyPublisher()
+        //        }
+        
         if let request = buildNewsRequest(page: page) {
             return networkService.request(request: request)
         }
@@ -53,12 +54,4 @@ class NewsListRepositoryImplementation: NewsListRepositoryProtocol {
         return request
     }
 
-}
-
-struct APIConfig {
-    static let scheme = "https"
-    static let host = "newsapi.org"
-    static let headlinePath = "/v2/top-headlines"
-    static let apiKey = "913cfb63f8094d2ca10e013716c8bb26"
-    static let everythingPath = "/v2/everything"
 }

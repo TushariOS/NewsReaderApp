@@ -29,7 +29,7 @@ final class NewsBookMarkViewController: UIViewController {
     
     //MARK: - private
     private func naviagtionBarSetup() {
-        self.navigationItem.title = "BookMaark's"
+        self.navigationItem.title = "BookMark's"
         navigationController?.applyBlueNavigationBar()
     }
     

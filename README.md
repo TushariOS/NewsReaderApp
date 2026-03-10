@@ -1,10 +1,8 @@
 # NewsReaderApp
 A modern iOS News Reader application built using Clean Architecture + MVVM with a focus on maintainable, testable, and scalable code.
-Architecture
 
 The project follows Clean Architecture with MVVM and Dependency Injection to ensure separation of concerns and modular code structure.
-Key Principles
-
+## Key Principles
 - Clean Architecture
 - MVVM (Model-View-ViewModel)
 - Dependency Injection
@@ -19,6 +17,10 @@ Key Principles
 - Combine
 - Dynamic Property List (Plist) for local storage
 - XCTest for unit testing
+- SPM
+
+## Flow
+![](VipFlow.png)
 
 ## Features
 1. News Feed
@@ -28,7 +30,7 @@ Key Principles
  - Article image
  - Source name
  - Publication date
- -Supports pagination / infinite scrolling
+ - Supports pagination / infinite scrolling
 
 2. Article Detail Screen
  - View complete article details
@@ -82,5 +84,5 @@ NewsReaderApp
 └── Tests
 
 ## Author
-Developed by Tushar Jaunjalkar
-iOS Developer
+ Developed by Tushar Jaunjalkar
+ iOS Developer

@@ -19,9 +19,6 @@ The project follows Clean Architecture with MVVM and Dependency Injection to ens
 - XCTest for unit testing
 - SPM
 
-## Flow
-![](VipFlow.png)
-
 ## Features
 1. News Feed
  - Fetches latest articles from a public news API
@@ -56,32 +53,6 @@ The project includes unit test coverage using XCTest, including:
   - UseCase testing
   - Repository layer testing
   - Mock network service
-
-##Project Structure
-NewsReaderApp
-│
-├── Presentation
-│   ├── ViewControllers
-│   ├── ViewModels
-│
-├── Domain
-│   ├── Entities
-│   ├── UseCases
-│   ├── Protocols
-│
-├── Data
-│   ├── Repository
-│   ├── DTO
-│   ├── Network Layer
-│
-├── Persistence
-│   ├── Plist DataStore
-│
-├── Utilities
-│   ├── Extensions
-│   ├── Helpers
-│
-└── Tests
 
 ## Author
  Developed by Tushar Jaunjalkar

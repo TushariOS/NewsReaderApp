@@ -49,20 +49,6 @@ Key Principles
   - Bookmarked articles are stored locally using:
   - Dynamic Plist storage
 
-(Alternative options could include CoreData or Realm)
-
-Networking
-
-Networking is implemented using:
-
-URLSession
-
-Structured API layer
-
-Repository pattern
-
-Testing
-
 The project includes unit test coverage using XCTest, including:
   - ViewModel testing
   - UseCase testing
